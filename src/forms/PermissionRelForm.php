@@ -1,8 +1,8 @@
 <?php
 
-namespace justcoded\yii2\src\forms;
+namespace justcoded\yii2\rbac\forms;
 
-use justcoded\yii2\src\models\Permission;
+use justcoded\yii2\rbac\models\Permission;
 use Yii;
 use yii\base\Model;
 

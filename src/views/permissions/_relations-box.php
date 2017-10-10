@@ -1,6 +1,6 @@
 <?php
-/* @var $model \justcoded\yii2\src\forms\PermissionForm */
-/* @var $relModel \justcoded\yii2\src\forms\PermissionRelForm */
+/* @var $model \justcoded\yii2\rbac\forms\PermissionForm */
+/* @var $relModel \justcoded\yii2\rbac\forms\PermissionRelForm */
 /* @var $title string */
 /* @var $introMsg string */
 /* @var $emptyMsg string */

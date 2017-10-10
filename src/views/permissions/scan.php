@@ -1,6 +1,6 @@
 <?php
 /* @var $this \yii\web\View */
-/* @var $model \justcoded\yii2\src\forms\ScanForm */
+/* @var $model \justcoded\yii2\rbac\forms\ScanForm */
 
 use yii\bootstrap\ActiveForm;
 use yii\helpers\Html;

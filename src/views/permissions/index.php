@@ -1,12 +1,12 @@
 <?php
 
 use yii\helpers\Html;
-use justcoded\yii2\src\models\ItemSearch;
-use justcoded\yii2\src\forms\RoleForm;
+use justcoded\yii2\rbac\models\ItemSearch;
+use justcoded\yii2\rbac\forms\RoleForm;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $searchModel justcoded\yii2\src\models\ItemSearch */
+/* @var $searchModel justcoded\yii2\rbac\models\ItemSearch */
 /* @var $dataProviderPermissions yii\data\ActiveDataProvider */
 /* @var $dataProviderRoles yii\data\ActiveDataProvider */
 
@@ -96,7 +96,7 @@ $this->params['breadcrumbs'][] = $this->title;
 								'header' => 'Role',
 								'format' => 'html',
 								'headerOptions' => ['class' => 'col-md-2'],
-								'filter'    => Html::activeDropDownList($searchModel, 'permRole', \justcoded\yii2\src\models\Role::getList(),
+								'filter'    => Html::activeDropDownList($searchModel, 'permRole', \justcoded\yii2\rbac\models\Role::getList(),
 									['class' => 'form-control', 'prompt' => 'Any']
 								),
 								'value'  => function ($data) {

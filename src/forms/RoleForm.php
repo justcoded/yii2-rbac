@@ -1,10 +1,10 @@
 <?php
 
-namespace justcoded\yii2\src\forms;
+namespace justcoded\yii2\rbac\forms;
 
-use justcoded\yii2\src\models\Item;
-use justcoded\yii2\src\models\Permission;
-use justcoded\yii2\src\models\Role;
+use justcoded\yii2\rbac\models\Item;
+use justcoded\yii2\rbac\models\Permission;
+use justcoded\yii2\rbac\models\Role;
 use yii\helpers\ArrayHelper;
 use yii\rbac\Role as RbacRole;
 use Yii;

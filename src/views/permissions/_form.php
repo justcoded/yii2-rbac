@@ -1,14 +1,14 @@
 <?php
 /* @var $this \yii\web\View */
-/* @var $model \justcoded\yii2\src\forms\PermissionForm */
-/* @var $permission \justcoded\yii2\src\models\Permission */
+/* @var $model \justcoded\yii2\rbac\forms\PermissionForm */
+/* @var $permission \justcoded\yii2\rbac\models\Permission */
 /* @var $relModel PermissionRelForm */
 
-use justcoded\yii2\src\forms\PermissionRelForm;
+use justcoded\yii2\rbac\forms\PermissionRelForm;
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 use kartik\select2\Select2;
-use justcoded\yii2\src\forms\ItemForm;
+use justcoded\yii2\rbac\forms\ItemForm;
 
 ?>
 
@@ -72,7 +72,7 @@ use justcoded\yii2\src\forms\ItemForm;
 			'introMsg' => 'Permission is assigned to such roles:',
 			'emptyMsg' => 'Permission is not assigned to any roles.',
 			'searchMsg' => 'Search roles...',
-			'options' => \justcoded\yii2\src\models\Role::getList(),
+			'options' => \justcoded\yii2\rbac\models\Role::getList(),
 			'selected' => $permission->getRoles(),
 			'btnTxt' => 'Assign',
 		]);
@@ -85,7 +85,7 @@ use justcoded\yii2\src\forms\ItemForm;
 			'introMsg' => 'Permission is a <b>child</b> of such permissions:',
 			'emptyMsg' => 'Permission doesn\'t have parents.',
 			'searchMsg' => 'Search permissions...',
-			'options' => \justcoded\yii2\src\models\Permission::getList(),
+			'options' => \justcoded\yii2\rbac\models\Permission::getList(),
 			'selected' => $permission->getParents(),
 			'btnTxt' => 'Add Parents',
 		]);
@@ -98,7 +98,7 @@ use justcoded\yii2\src\forms\ItemForm;
 			'introMsg' => 'Permission is a <b>parent</b> of such permissions:',
 			'emptyMsg' => 'Permission doesn\'t have children.',
 			'searchMsg' => 'Search permissions...',
-			'options' => \justcoded\yii2\src\models\Permission::getList(),
+			'options' => \justcoded\yii2\rbac\models\Permission::getList(),
 			'selected' => $permission->getChildren(),
 			'btnTxt' => 'Add Childs',
 		]); ?>

@@ -2,15 +2,15 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
-use justcoded\yii2\src\assets\RbacAssetBundle;
-use justcoded\yii2\src\models\ItemSearch;
+use justcoded\yii2\rbac\assets\RbacAssetBundle;
+use justcoded\yii2\rbac\models\ItemSearch;
 use yii\helpers\ArrayHelper;
-use justcoded\yii2\src\forms\RoleForm;
+use justcoded\yii2\rbac\forms\RoleForm;
 
 RbacAssetBundle::register($this);
 
 /* @var $this yii\web\View */
-/* @var $searchModel justcoded\yii2\src\models\ItemSearch */
+/* @var $searchModel justcoded\yii2\rbac\models\ItemSearch */
 /* @var $dataProviderPermissions yii\data\ActiveDataProvider */
 /* @var $dataProviderRoles yii\data\ActiveDataProvider */
 

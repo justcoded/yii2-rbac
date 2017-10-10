@@ -1,6 +1,6 @@
 <?php
 
-namespace justcoded\yii2\src\assets;
+namespace justcoded\yii2\rbac\assets;
 
 class RbacAssetBundle extends \yii\web\AssetBundle
 {

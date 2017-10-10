@@ -1,13 +1,13 @@
 <?php
 
-namespace justcoded\yii2\src\forms;
+namespace justcoded\yii2\rbac\forms;
 
 use Yii;
 use yii\base\Model;
 use yii\rbac\Permission as RbacPermission;
 use yii\rbac\Role as RbacRole;
-use justcoded\yii2\src\helpers\ScanHelper;
-use justcoded\yii2\src\models\Permission;
+use justcoded\yii2\rbac\helpers\ScanHelper;
+use justcoded\yii2\rbac\models\Permission;
 
 class ScanForm extends Model
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace justcoded\yii2\src\forms;
+namespace justcoded\yii2\rbac\forms;
 
-use justcoded\yii2\src\models\Item;
-use justcoded\yii2\src\models\Permission;
+use justcoded\yii2\rbac\models\Item;
+use justcoded\yii2\rbac\models\Permission;
 use yii\rbac\Role as RbacRole;
 use yii\rbac\Permission as RbacPermission;
 use Yii;

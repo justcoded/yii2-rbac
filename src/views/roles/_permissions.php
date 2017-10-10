@@ -1,6 +1,6 @@
 <?php
 /* @var $this \yii\web\View */
-/* @var $model \justcoded\yii2\src\forms\RoleForm */
+/* @var $model \justcoded\yii2\rbac\forms\RoleForm */
 /* @var $form \yii\bootstrap\ActiveForm */
 
 use yii\helpers\Html;

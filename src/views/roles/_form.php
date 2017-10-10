@@ -1,13 +1,13 @@
 <?php
 /* @var $this \yii\web\View */
-/* @var $model \justcoded\yii2\src\forms\RoleForm */
-/* @var $role \justcoded\yii2\src\models\Role */
+/* @var $model \justcoded\yii2\rbac\forms\RoleForm */
+/* @var $role \justcoded\yii2\rbac\models\Role */
 
-use justcoded\yii2\src\models\Role;
+use justcoded\yii2\rbac\models\Role;
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
-use justcoded\yii2\src\forms\ItemForm;
-use justcoded\yii2\src\assets\RbacAssetBundle;
+use justcoded\yii2\rbac\forms\ItemForm;
+use justcoded\yii2\rbac\assets\RbacAssetBundle;
 
 RbacAssetBundle::register($this);
 ?>

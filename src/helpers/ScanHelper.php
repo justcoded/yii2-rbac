@@ -1,6 +1,6 @@
 <?php
 
-namespace justcoded\yii2\src\helpers;
+namespace justcoded\yii2\rbac\helpers;
 
 use Yii;
 use yii\helpers\Inflector;

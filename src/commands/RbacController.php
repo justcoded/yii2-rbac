@@ -1,9 +1,9 @@
 <?php
 
-namespace justcoded\yii2\src\commands;
+namespace justcoded\yii2\rbac\commands;
 
-use justcoded\yii2\src\forms\ScanForm;
-use justcoded\yii2\src\models\Item;
+use justcoded\yii2\rbac\forms\ScanForm;
+use justcoded\yii2\rbac\models\Item;
 use Yii;
 use yii\base\InvalidParamException;
 use yii\console\Controller;

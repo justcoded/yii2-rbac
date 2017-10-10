@@ -1,6 +1,6 @@
 <?php
 /* @var $this \yii\web\View */
-/* @var $model \justcoded\yii2\src\forms\PermissionForm */
+/* @var $model \justcoded\yii2\rbac\forms\PermissionForm */
 
 $this->title                   = 'Add Permission';
 $this->params['breadcrumbs'][] = ['label' => 'Permissions', 'url' => ['index']];

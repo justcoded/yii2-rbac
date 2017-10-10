@@ -1,17 +1,17 @@
 <?php
 
-namespace justcoded\yii2\src\controllers;
+namespace justcoded\yii2\rbac\controllers;
 
-use justcoded\yii2\src\forms\PermissionForm;
-use justcoded\yii2\src\forms\PermissionRelForm;
-use justcoded\yii2\src\models\Permission;
+use justcoded\yii2\rbac\forms\PermissionForm;
+use justcoded\yii2\rbac\forms\PermissionRelForm;
+use justcoded\yii2\rbac\models\Permission;
 use Yii;
 use yii\filters\VerbFilter;
 use yii\web\NotFoundHttpException;
 use yii\web\Response;
 use yii\web\Controller;
-use justcoded\yii2\src\models\ItemSearch;
-use justcoded\yii2\src\forms\ScanForm;
+use justcoded\yii2\rbac\models\ItemSearch;
+use justcoded\yii2\rbac\forms\ScanForm;
 
 /**
  * PermissionsController implements the CRUD actions for AuthItems model.

@@ -1,6 +1,6 @@
 <?php
 
-namespace justcoded\yii2\src\models;
+namespace justcoded\yii2\rbac\models;
 
 use Yii;
 use yii\rbac\Item as RbacItem;

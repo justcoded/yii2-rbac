@@ -1,9 +1,9 @@
 <?php
 
-namespace justcoded\yii2\src\controllers;
+namespace justcoded\yii2\rbac\controllers;
 
-use justcoded\yii2\src\forms\RoleForm;
-use justcoded\yii2\src\models\Role;
+use justcoded\yii2\rbac\forms\RoleForm;
+use justcoded\yii2\rbac\models\Role;
 use Yii;
 use yii\filters\VerbFilter;
 use yii\web\NotFoundHttpException;

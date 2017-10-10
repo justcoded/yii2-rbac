@@ -1,8 +1,8 @@
 <?php
 
-namespace justcoded\yii2\src\components;
+namespace justcoded\yii2\rbac\components;
 
-use justcoded\yii2\src\models\Item;
+use justcoded\yii2\rbac\models\Item;
 use yii\db\Query;
 use yii\rbac\Permission;
 

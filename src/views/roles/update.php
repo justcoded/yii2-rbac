@@ -1,7 +1,7 @@
 <?php
 /* @var $this \yii\web\View */
-/* @var $model \justcoded\yii2\src\forms\RoleForm */
-/* @var $role \justcoded\yii2\src\models\Role */
+/* @var $model \justcoded\yii2\rbac\forms\RoleForm */
+/* @var $role \justcoded\yii2\rbac\models\Role */
 
 $this->title                   = 'Update role';
 $this->params['breadcrumbs'][] = ['label' => 'Permissions', 'url' => ['index']];

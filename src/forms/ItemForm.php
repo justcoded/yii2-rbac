@@ -1,6 +1,6 @@
 <?php
 
-namespace justcoded\yii2\src\forms;
+namespace justcoded\yii2\rbac\forms;
 
 use yii\base\Model;
 use Yii;
