@@ -1,6 +1,6 @@
 <?php
 
-namespace justcoded\yii2\src;
+namespace justcoded\yii2\rbac;
 
 
 class Module extends \yii\base\Module
