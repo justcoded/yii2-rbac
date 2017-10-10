@@ -4,10 +4,9 @@ namespace justcoded\yii2\rbac\assets;
 
 class RbacAssetBundle extends \yii\web\AssetBundle
 {
-	public $sourcePath = '@app/extensions/rbac/assets';
+	public $sourcePath = '@vendor/justcoded/yii2-rbac/src/assets';
 
 	public $css = [
-		//'css/rbac.css',
 	];
 
 	public $js = [
