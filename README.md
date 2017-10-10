@@ -48,9 +48,7 @@ to access routes.
 
 Simple GUI* interface to manage your roles and permissions.
 
-<div class="warning">
-**Note:** GUI still has alpha version features. Don't share access to this GUI to your clients!
-</div> 
+> **Note:** GUI still has alpha version features. Don't share access to this GUI to your clients!
 
 ### Installation
 
@@ -135,11 +133,9 @@ php yii rbac/scan -p='@vendor/justcoded/yii2-rbac' -b='admin/rbac/'
 
 To use graphical interface just follow the route you specified as base when scan routes / configure module.
 
-<div class="warning">
-**Note:** Role Permissions selector is a hotfix solution, so it doesn't display proper tree structure when
+> **Note:** Role Permissions selector is a hotfix solution, so it doesn't display proper tree structure when
 you move items between boxes.
-This will be fixed in next versions.
-</div>
+> This will be fixed in next versions.
 
 #### Route Access filter
 
