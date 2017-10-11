@@ -19,7 +19,7 @@ $inheritTree = $model->getLinearTree($model->inheritPermissions);
 
 			<?php if (!empty($inheritTree)) : ?>
 			<optgroup label="Inherit Permissions" data-weight="<?= end($inheritTree)['order']; ?>">
-				<?= $this->render('_permission-options', ['treeItems' => $inheritTree]); ?>
+				<?= $this->render('_permission-options', ['treeItems' => $inheritTree, 'disabled' => true]); ?>
 			</optgroup>
 			<?php endif; ?>
 		</select>
