@@ -63,7 +63,7 @@ abstract class ItemForm extends Model
 	 */
 	public static function getNamePattern()
 	{
-		return '/^[a-z0-9\s\_\-\/]+$/i';
+		return '/^[a-z0-9\s\_\-\/*]+$/i';
 	}
 
 	///=======================
