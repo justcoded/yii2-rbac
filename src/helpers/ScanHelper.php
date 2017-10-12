@@ -79,7 +79,7 @@ class ScanHelper
 				continue;
 			}
 
-			if (! preg_match('/class\s+(([a-z0-9_]+)Controller)[^{^\*]+{/i', $content, $classMatch)) {
+			if (! preg_match('/class\s+(([a-z0-9_]+)Controller)[^{]+{/i', $content, $classMatch)) {
 				continue;
 			}
 
