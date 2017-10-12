@@ -65,7 +65,11 @@ class ScanHelper
 		$actions = [];
 		foreach ($controllers as $filename) {
 			$content = file_get_contents($filename);
-
+			$content = preg_replace(
+				"/(\/\*([^*]|[\r\n]|(\*+([^*\/]|[\r\n])))*\*\/)|(\/\/.*)/i",
+				'',
+				$content
+			);
 			// ignore abstract classes
 			if (false !== strpos($content, 'abstract class')) {
 				continue;
