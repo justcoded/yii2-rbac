@@ -198,6 +198,8 @@ class Permission extends Item
 		$parents = [];
 		$childs = [];
 
+		// TODO: add static cache
+
 		foreach ($names as $parentName) {
 			$children = Yii::$app->authManager->getChildren($parentName);
 			foreach ($children as $childName => $item) {

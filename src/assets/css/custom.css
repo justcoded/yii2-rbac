@@ -1,0 +1,86 @@
+.permissions-tree{
+}
+.permissions-tree .label{
+	display: block;
+	margin: 0 0 10px;
+}
+.permissions-tree .simple-input{
+	display: block;
+	color: #a3a3a3;
+	width: 100%;
+	height: 34px;
+	padding: 0 10px;
+	border: 1px solid #d7dbe2;
+	outline: none;
+	flex-shrink: 0;
+}
+.permissions-tree .btn-simple{
+	display: block;
+	font-size: 0;
+	color: #3a3a3a;
+	background: #f2f2f2;
+	width: 100%;
+	height: 34px;
+	padding: 0 10px;
+	border: none;
+	border-radius: 3px;
+	outline: none;
+	transition: background 0.3s ease-in-out;
+	cursor: pointer;
+	margin: 0 0 5px;
+	position: relative;
+}
+.permissions-tree .btn-simple:before{
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -7px;
+	margin-top: -7px;
+	background: url(../images/next.png) no-repeat 50% 50%;
+	background-size: contain;
+	width: 14px;
+	height: 14px;
+	pointer-events: none;
+}
+.permissions-tree .btn-simple.add-all:before{
+	background: url(../images/next.png) no-repeat 50% 50%;
+}
+.permissions-tree .btn-simple.remove-all:before{
+	background: url(../images/prev.png) no-repeat 50% 50%;
+}
+.permissions-tree .btn-simple.add:before{
+	background: url(../images/right.png) no-repeat 50% 50%;
+}
+.permissions-tree .btn-simple.remove:before{
+	background: url(../images/left.png) no-repeat 50% 50%;
+}
+.permissions-tree .btn-simple:hover{
+	background-color: #dad8d8;
+}
+.permissions-tree .btn-holder{
+	padding: 34px 0 0;
+}
+.permissions-tree .jstree{
+	padding: 30px 0;
+	border: 1px solid #d7dbe2;
+	border-top-width: 0;
+	height: 100%;
+}
+.display-flex{
+	display: flex;
+	flex-direction: column;
+}
+::-webkit-input-placeholder {color:#a3a3a3;}
+::-moz-placeholder          {color:#a3a3a3;}/* Firefox 19+ */
+:-moz-placeholder           {color:#a3a3a3;}/* Firefox 18- */
+:-ms-input-placeholder      {color:#a3a3a3;}
+
+@media (max-width: 767px){
+	.permissions-tree .btn-holder{
+		padding: 34px 0;
+	}
+	.permissions-tree .btn-simple:before{
+		transform: rotate(90deg);
+	}
+}

@@ -190,18 +190,19 @@ class RoleForm extends ItemForm
 	 * Prepare linear tree array with depth and weight parameters
 	 *
 	 * @param string[] $permissions
+	 * @param bool     $missingParents  Include parents, which are not present in the tree in "parent" attribute
 	 *
 	 * @return array
 	 */
-	public function getLinearTree($permissions)
+	public function getLinearTree($permissions, $missingParents = true)
 	{
 		if (empty($permissions)) {
 			return [];
 		}
 
-		list($parents, $children) = Permission::getParentChildMap($permissions);
+		list($parents, $children) = Permission::getParentChildMap($missingParents? null : $permissions);
 
-		$tree = $this->buildLinearTree($permissions, $permissions, $children);
+		$tree = $this->buildLinearTree($permissions, $permissions, $children, $parents);
 
 		return $tree;
 	}
@@ -212,11 +213,12 @@ class RoleForm extends ItemForm
 	 * @param array $array
 	 * @param array $items
 	 * @param array $children
-	 * @param int $depth
+	 * @param null  $parents
+	 * @param int   $depth
 	 *
 	 * @return array
 	 */
-	protected function buildLinearTree($array, &$items, &$children, $depth = 0)
+	protected function buildLinearTree($array, &$items, &$children, &$parents, $depth = 0)
 	{
 		static $position;
 
@@ -227,14 +229,16 @@ class RoleForm extends ItemForm
 			}
 
 			$tree[$item] = [
-				'name' => $item,
+				'id' => $item,
+				'text' => $item,
+				'parent' => isset($parents[$item]) ? end($parents[$item]) : '#',
 				'depth' => $depth,
 				'order' => (int) $position++,
 			];
 			unset($items[$item]);
 
 			if (!empty($children[$item])) {
-				$tree += $this->buildLinearTree($children[$item], $items, $children, $depth+1);
+				$tree += $this->buildLinearTree($children[$item], $items, $children, $parents, $depth+1);
 			}
 		}
 
