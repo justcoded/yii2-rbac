@@ -14,9 +14,8 @@ $inheritTree = $model->getLinearTree($model->inheritPermissions, false);
 $this->registerJs('window.allowPermissions = ' . Json::encode(array_values($allowTree)), View::POS_BEGIN);
 $this->registerJs('window.denyPermissions = ' . Json::encode(array_values($denyTree)), View::POS_BEGIN);
 $this->registerJs('window.inheritPermissions = ' . Json::encode(array_values($inheritTree)), View::POS_BEGIN);
-// TODO: update to tree structured dual list panel
 ?>
-<div class="row permissions-tree">
+<div class="row js-tree-box">
 	<div class="col-md-3">
 		<h4>Inherit Permissions</h4>
 		<input type="text" class="simple-input" id="inheritSearch" placeholder="Search..." />
@@ -26,6 +25,8 @@ $this->registerJs('window.inheritPermissions = ' . Json::encode(array_values($in
 		<h4>Allowed Permissions</h4>
 		<input type="text" class="simple-input" id="allowSearch" placeholder="Search..." />
 		<div id="allowPermissions"></div>
+		<select name="<?= $model->formName() ?>[allowPermissions][]" id="allowPermissionsCntrl" multiple="multiple" class="hidden">
+		</select>
 	</div>
 	<div class="col-md-1">
 		<div class="btn-holder">
@@ -41,35 +42,3 @@ $this->registerJs('window.inheritPermissions = ' . Json::encode(array_values($in
 		<div id="denyPermissions"></div>
 	</div>
 </div>
-
-<?php /*
-<div class="row">
-	<div class="col-sm-5">
-		<h4>Allowed Permissions</h4>
-		<select name="<?= $model->formName() ?>[allowPermissions][]" id="allow_permissions" class="form-control" size="16" multiple="multiple">
-			<?= $this->render('_permission-options', ['treeItems' => $allowTree]); ?>
-
-			<?php if (!empty($inheritTree)) : ?>
-			<optgroup label="Inherit Permissions" data-weight="<?= end($inheritTree)['order']; ?>">
-				<?= $this->render('_permission-options', ['treeItems' => $inheritTree, 'disabled' => true]); ?>
-			</optgroup>
-			<?php endif; ?>
-		</select>
-	</div>
-
-	<div class="col-sm-2">
-		<h4>&nbsp;</h4>
-		<button type="button" id="allow_permissions_rightAll" class="btn btn-block"><i class="glyphicon glyphicon-forward"></i></button>
-		<button type="button" id="allow_permissions_rightSelected" class="btn btn-block"><i class="glyphicon glyphicon-chevron-right"></i></button>
-		<button type="button" id="allow_permissions_leftSelected" class="btn btn-block"><i class="glyphicon glyphicon-chevron-left"></i></button>
-		<button type="button" id="allow_permissions_leftAll" class="btn btn-block"><i class="glyphicon glyphicon-backward"></i></button>
-	</div>
-
-	<div class="col-sm-5">
-		<h4>Denied Permissions</h4>
-		<select id="deny_permissions" class="form-control" size="16" multiple="multiple">
-			<?= $this->render('_permission-options', ['treeItems' => $denyTree]); ?>
-		</select>
-	</div>
-</div>
- */ ?>

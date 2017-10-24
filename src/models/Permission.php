@@ -17,6 +17,11 @@ class Permission extends Item
 	public static $itemsCache;
 
 	/**
+	 * @var array
+	 */
+	private static $parentsCache;
+
+	/**
 	 * @var RbacPermission Rbac item object.
 	 */
 	private $item;
@@ -195,20 +200,25 @@ class Permission extends Item
 			$names = array_keys(Yii::$app->authManager->getPermissions());
 		}
 
-		$parents = [];
-		$childs = [];
+		$cacheKey = md5(serialize($names));
 
-		// TODO: add static cache
+		if (!isset(static::$parentsCache[$cacheKey])) {
+			$parents = [];
+			$childs = [];
 
-		foreach ($names as $parentName) {
-			$children = Yii::$app->authManager->getChildren($parentName);
-			foreach ($children as $childName => $item) {
-				$childs[$parentName][$childName] = $childName;
-				$parents[$childName][$parentName] = $parentName;
+			foreach ($names as $parentName) {
+				$children = Yii::$app->authManager->getChildren($parentName);
+				foreach ($children as $childName => $item) {
+					$childs[$parentName][$childName] = $childName;
+					$parents[$childName][$parentName] = $parentName;
+				}
 			}
+
+			static::$parentsCache[$cacheKey] = [$parents, $childs];
 		}
 
-		return [$parents, $childs];
+
+		return static::$parentsCache[$cacheKey];
 	}
 
 }

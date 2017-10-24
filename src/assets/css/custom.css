@@ -1,10 +1,17 @@
-.permissions-tree{
+.js-tree-box{
+	color: #212529;
+	font-size: 16px;
 }
-.permissions-tree .label{
+.js-tree-box .label{
 	display: block;
 	margin: 0 0 10px;
+	color: #212529;
+	padding: 0;
+	font-size: 16px;
+	font-weight: normal;
+	text-align: left;
 }
-.permissions-tree .simple-input{
+.js-tree-box .simple-input{
 	display: block;
 	color: #a3a3a3;
 	width: 100%;
@@ -14,7 +21,7 @@
 	outline: none;
 	flex-shrink: 0;
 }
-.permissions-tree .btn-simple{
+.js-tree-box .btn-simple{
 	display: block;
 	font-size: 0;
 	color: #3a3a3a;
@@ -30,7 +37,7 @@
 	margin: 0 0 5px;
 	position: relative;
 }
-.permissions-tree .btn-simple:before{
+.js-tree-box .btn-simple:before{
 	content: '';
 	position: absolute;
 	top: 50%;
@@ -43,44 +50,39 @@
 	height: 14px;
 	pointer-events: none;
 }
-.permissions-tree .btn-simple.add-all:before{
+.js-tree-box .btn-simple.add-all:before{
 	background: url(../images/next.png) no-repeat 50% 50%;
 }
-.permissions-tree .btn-simple.remove-all:before{
+.js-tree-box .btn-simple.remove-all:before{
 	background: url(../images/prev.png) no-repeat 50% 50%;
 }
-.permissions-tree .btn-simple.add:before{
+.js-tree-box .btn-simple.add:before{
 	background: url(../images/right.png) no-repeat 50% 50%;
 }
-.permissions-tree .btn-simple.remove:before{
+.js-tree-box .btn-simple.remove:before{
 	background: url(../images/left.png) no-repeat 50% 50%;
 }
-.permissions-tree .btn-simple:hover{
+.js-tree-box .btn-simple:hover{
 	background-color: #dad8d8;
 }
-.permissions-tree .btn-holder{
-	padding: 34px 0 0;
+.js-tree-box .btn-holder{
+	padding: 120px 0 0;
 }
-.permissions-tree .jstree{
+.js-tree-box .jstree{
 	padding: 30px 0;
 	border: 1px solid #d7dbe2;
 	border-top-width: 0;
-	height: 100%;
+	height: 300px;
+	overflow: auto;
 }
-.display-flex{
-	display: flex;
-	flex-direction: column;
+.jstree-default .jstree-disabled {
+	opacity: 0.5;
 }
-::-webkit-input-placeholder {color:#a3a3a3;}
-::-moz-placeholder          {color:#a3a3a3;}/* Firefox 19+ */
-:-moz-placeholder           {color:#a3a3a3;}/* Firefox 18- */
-:-ms-input-placeholder      {color:#a3a3a3;}
-
 @media (max-width: 767px){
-	.permissions-tree .btn-holder{
+	.js-tree-box .btn-holder{
 		padding: 34px 0;
 	}
-	.permissions-tree .btn-simple:before{
+	.js-tree-box .btn-simple:before{
 		transform: rotate(90deg);
 	}
 }

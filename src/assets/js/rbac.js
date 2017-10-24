@@ -17,12 +17,13 @@
       toSearchElement:'#denySearch',
       toClearElement:'#denySearcClear',
       removeButtonElement:'#permissions-left',
-      removeAllButtonElement:'#permissions-left-all'
+      removeAllButtonElement:'#permissions-left-all',
+      hiddenMultiselect:'#allowPermissionsCntrl'
     });
 
     // inherit permissions init
     $('#inheritPermissions').jstree({
-      'plugins': ['search', 'wholerow'],
+      'plugins': ['search'],
       'core': {
         'data': window.inheritPermissions,
         'animation': false,
