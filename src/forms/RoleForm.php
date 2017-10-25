@@ -80,8 +80,12 @@ class RoleForm extends ItemForm
 	 */
 	public function uniqueItemName($attribute, $params, $validator)
 	{
-		$permission = Role::getList();
-		return ! isset($permission[$this->$attribute]);
+		$name = $this->$attribute;
+		if ($item = Role::find($name)) {
+			$this->addError($attribute, 'Role with the same name is already exists.');
+			return false;
+		}
+		return true;
 	}
 
 	/**
@@ -138,16 +142,18 @@ class RoleForm extends ItemForm
 	public function getInheritPermissions()
 	{
 		$herited = [];
-		foreach ($this->childRoles as $roleName) {
-			$permissions = Yii::$app->authManager->getPermissionsByRole($roleName);
-			$herited = array_merge(
-				$herited,
-				array_keys($permissions)
-			);
-		}
+		if (!empty($this->childRoles)) {
+			foreach ($this->childRoles as $roleName) {
+				$permissions = Yii::$app->authManager->getPermissionsByRole($roleName);
+				$herited = array_merge(
+					$herited,
+					array_keys($permissions)
+				);
+			}
 
-		$herited = array_unique($herited);
-		$herited = array_combine($herited, $herited);
+			$herited = array_unique($herited);
+			$herited = array_combine($herited, $herited);
+		}
 		return $herited;
 	}
 

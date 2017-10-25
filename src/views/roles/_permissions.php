@@ -16,11 +16,13 @@ $this->registerJs('window.denyPermissions = ' . Json::encode(array_values($denyT
 $this->registerJs('window.inheritPermissions = ' . Json::encode(array_values($inheritTree)), View::POS_BEGIN);
 ?>
 <div class="row js-tree-box">
-	<div class="col-md-3">
-		<h4>Inherit Permissions</h4>
-		<input type="text" class="simple-input" id="inheritSearch" placeholder="Search..." />
-		<div id="inheritPermissions"></div>
-	</div>
+	<?php if ($model::SCENARIO_CREATE !== $model->scenario) : ?>
+		<div class="col-md-3">
+			<h4>Inherit Permissions</h4>
+			<input type="text" class="simple-input" id="inheritSearch" placeholder="Search..." />
+			<div id="inheritPermissions"></div>
+		</div>
+	<?php endif; ?>
 	<div class="col-md-4">
 		<h4>Allowed Permissions</h4>
 		<input type="text" class="simple-input" id="allowSearch" placeholder="Search..." />
