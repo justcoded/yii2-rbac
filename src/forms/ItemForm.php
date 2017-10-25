@@ -63,51 +63,7 @@ abstract class ItemForm extends Model
 	 */
 	public static function getNamePattern()
 	{
-		return '/^[a-z0-9\s\_\-\/]+$/i';
+		return '/^[a-z0-9\s\_\-\/\*]+$/i';
 	}
 
-	///=======================
-	/// TODO: regactor below
-
-	/**
-	 * @param array $array_parent
-	 * @param array $params
-	 * @param bool $permission
-	 * @return bool
-	 */
-	public function addChildrenArray(array $array_parent, array $params, $permission = true)
-	{
-		foreach ($array_parent as $name) {
-
-			if ($permission) {
-				$item = Yii::$app->authManager->getPermission($name);
-			}else{
-				$item = Yii::$app->authManager->getRole($name);
-			}
-
-			if (isset($params['child'])) {
-				Yii::$app->authManager->addChild($item, $params['child']);
-			}elseif (isset($params['parent'])){
-				Yii::$app->authManager->addChild($params['parent'], $item);
-			}else{
-				return false;
-			}
-		}
-
-		return true;
-	}
-
-	/**
-	 * @param array $array_parent
-	 * @param $child
-	 * @return bool
-	 */
-	public function removeChildrenArray(array $array_parent, $child)
-	{
-		foreach ($array_parent as $parent){
-			Yii::$app->authManager->removeChild($parent, $child);
-		}
-
-		return true;
-	}
 }

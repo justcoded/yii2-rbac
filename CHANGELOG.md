@@ -1,6 +1,11 @@
 CHANGELOG
 =====================
 
+v1.1
+---------------------
+* Role permission selector now have better UI with real trees.
+* Bugfix: Item name validation not allow '*'.
+
 v1.0.1
 ---------------------
 * Disable inherit permissions in role permissions selector.
