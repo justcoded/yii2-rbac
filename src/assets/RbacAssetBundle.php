@@ -12,7 +12,6 @@ class RbacAssetBundle extends \yii\web\AssetBundle
 	];
 
 	public $js = [
-		//'js/multiselect.min.js',
 		'js/jstree.min.js',
 		'js/jstree-double-panel.js',
 		'js/rbac.js'
