@@ -137,11 +137,16 @@ class PermissionsController extends Controller
 		$model = new PermissionRelForm();
 		if ($model->load(Yii::$app->request->post())) {
 			$model->setPermission($perm);
-			if ($model->addRelations()) {
-				Yii::$app->session->setFlash('success', 'New relations added successfully.');
-			} else {
-				$errors = $model->getFirstErrors();
-				Yii::$app->session->setFlash('warning', $errors ? reset($errors) : 'Some error occured.');
+			//TODO make it no possible to choose loop created items
+			try {
+				if ($model->addRelations()) {
+					Yii::$app->session->setFlash('success', 'New relations added successfully.');
+				} else {
+					$errors = $model->getFirstErrors();
+					Yii::$app->session->setFlash('warning', $errors ? reset($errors) : 'Some error occured.');
+				}
+			} catch (\Exception $e) {
+				Yii::$app->session->setFlash('warning', 'Hierarchy error');
 			}
 		}
 
