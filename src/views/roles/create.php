@@ -3,7 +3,7 @@
 /* @var $model \justcoded\yii2\rbac\forms\RoleForm */
 
 $this->title                   = 'Add role';
-$this->params['breadcrumbs'][] = ['label' => 'Permissions', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Permissions', 'url' => ['permissions/index']];
 $this->params['breadcrumbs'][] = $this->title;
 $this->params['heading']       = 'Permissions';
 $this->params['subheading']    = 'Add Role';

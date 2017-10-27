@@ -64,7 +64,7 @@ use yii\bootstrap\Html;
 				<?= Select2::widget([
 					'model'         => $relModel,
 					'attribute'     => 'names',
-					'data'          => array_diff($options, array_keys($selected), [$model->name]),
+					'data'          => array_diff($options, array_keys(array_merge($selected, $opposite)), [$model->name]),
 					'options'       => [
 						'id' => $form->id . '-search',
 						'placeholder' => $searchMsg,

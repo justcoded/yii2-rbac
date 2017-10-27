@@ -4,7 +4,7 @@
 /* @var $role \justcoded\yii2\rbac\models\Role */
 
 $this->title                   = 'Update role';
-$this->params['breadcrumbs'][] = ['label' => 'Permissions', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Permissions', 'url' => ['permissions/index']];
 $this->params['breadcrumbs'][] = $this->title;
 $this->params['heading']       = 'Permissions';
 $this->params['subheading']    = 'Update Role';

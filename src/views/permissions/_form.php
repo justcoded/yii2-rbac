@@ -73,6 +73,7 @@ use justcoded\yii2\rbac\forms\ItemForm;
 			'emptyMsg' => 'Permission is not assigned to any roles.',
 			'searchMsg' => 'Search roles...',
 			'options' => \justcoded\yii2\rbac\models\Role::getList(),
+			'opposite' => [],
 			'selected' => $permission->getRoles(),
 			'btnTxt' => 'Assign',
 		]);
@@ -86,6 +87,7 @@ use justcoded\yii2\rbac\forms\ItemForm;
 			'emptyMsg' => 'Permission doesn\'t have parents.',
 			'searchMsg' => 'Search permissions...',
 			'options' => \justcoded\yii2\rbac\models\Permission::getList(),
+			'opposite' => $permission->getChildren(),
 			'selected' => $permission->getParents(),
 			'btnTxt' => 'Add Parents',
 		]);
@@ -99,6 +101,7 @@ use justcoded\yii2\rbac\forms\ItemForm;
 			'emptyMsg' => 'Permission doesn\'t have children.',
 			'searchMsg' => 'Search permissions...',
 			'options' => \justcoded\yii2\rbac\models\Permission::getList(),
+			'opposite' => $permission->getParents(),
 			'selected' => $permission->getChildren(),
 			'btnTxt' => 'Add Childs',
 		]); ?>
