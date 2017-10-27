@@ -146,7 +146,7 @@ class PermissionsController extends Controller
 					Yii::$app->session->setFlash('warning', $errors ? reset($errors) : 'Some error occured.');
 				}
 			} catch (\Exception $e) {
-				Yii::$app->session->setFlash('warning', 'Hierarchy error');
+				Yii::$app->session->setFlash('warning', 'Relations can\'t be added because of hierarchy loop or impossible nesting.');
 			}
 		}
 
