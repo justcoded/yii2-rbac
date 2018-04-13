@@ -12,14 +12,32 @@ use yii\web\ForbiddenHttpException;
 class RouteAccessControl extends ActionFilter
 {
 	/**
-	 * @var array List of action that not need to check access.
+	 * List of action that not need to check access.
+	 *
+	 * @var array
 	 */
 	public $allowActions = [];
 
 	/**
-	 * @var string Allow route pattern
+	 * Allow route pattern
+	 * in debug mode default value is "/^(gii|debug)/i".
+	 *
+	 * @var string
 	 */
-	public $allowRegexp = '/(gii)/i';
+	public $allowRegexp = '/^(gii)/i';
+
+	/**
+	 * RouteAccessControl constructor.
+	 *
+	 * @param array $config
+	 */
+	public function __construct(array $config = [])
+	{
+		if (defined('YII_DEBUG') && YII_DEBUG) {
+			$this->allowRegexp = '/^(gii|debug)/i';
+		}
+		parent::__construct($config);
+	}
 
 	/**
 	 * This method is invoked right before an action is to be executed (after all possible filters.)
@@ -45,7 +63,7 @@ class RouteAccessControl extends ActionFilter
 		}
 
 		if (in_array($action_rule, $this->allowActions)
-		    || in_array($controller_rule, $this->allowActions)
+			|| in_array($controller_rule, $this->allowActions)
 		) {
 			$allow = true;
 		} else {
@@ -63,7 +81,7 @@ class RouteAccessControl extends ActionFilter
 	/**
 	 * Deny access method
 	 *
-	 * @throws ForbiddenHttpException
+	 * @throws ForbiddenHttpException Deny exception.
 	 */
 	public function denyAccess()
 	{
