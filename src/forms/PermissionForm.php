@@ -60,8 +60,12 @@ class PermissionForm extends ItemForm
 	 */
 	public function uniqueItemName($attribute, $params, $validator)
 	{
-		$permission = Permission::getList();
-		return ! isset($permission[$this->$attribute]);
+		$name = $this->$attribute;
+		if ($item = Permission::find($name)) {
+			$this->addError($attribute, 'Permission with the same name is already exists.');
+			return false;
+		}
+		return true;
 	}
 
 	/**

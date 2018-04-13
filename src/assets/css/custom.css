@@ -1,0 +1,88 @@
+.js-tree-box{
+	color: #212529;
+	font-size: 16px;
+}
+.js-tree-box .label{
+	display: block;
+	margin: 0 0 10px;
+	color: #212529;
+	padding: 0;
+	font-size: 16px;
+	font-weight: normal;
+	text-align: left;
+}
+.js-tree-box .simple-input{
+	display: block;
+	color: #a3a3a3;
+	width: 100%;
+	height: 34px;
+	padding: 0 10px;
+	border: 1px solid #d7dbe2;
+	outline: none;
+	flex-shrink: 0;
+}
+.js-tree-box .btn-simple{
+	display: block;
+	font-size: 0;
+	color: #3a3a3a;
+	background: #f2f2f2;
+	width: 100%;
+	height: 34px;
+	padding: 0 10px;
+	border: none;
+	border-radius: 3px;
+	outline: none;
+	transition: background 0.3s ease-in-out;
+	cursor: pointer;
+	margin: 0 0 5px;
+	position: relative;
+}
+.js-tree-box .btn-simple:before{
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -7px;
+	margin-top: -7px;
+	background: url(../images/next.png) no-repeat 50% 50%;
+	background-size: contain;
+	width: 14px;
+	height: 14px;
+	pointer-events: none;
+}
+.js-tree-box .btn-simple.add-all:before{
+	background: url(../images/next.png) no-repeat 50% 50%;
+}
+.js-tree-box .btn-simple.remove-all:before{
+	background: url(../images/prev.png) no-repeat 50% 50%;
+}
+.js-tree-box .btn-simple.add:before{
+	background: url(../images/right.png) no-repeat 50% 50%;
+}
+.js-tree-box .btn-simple.remove:before{
+	background: url(../images/left.png) no-repeat 50% 50%;
+}
+.js-tree-box .btn-simple:hover{
+	background-color: #dad8d8;
+}
+.js-tree-box .btn-holder{
+	padding: 120px 0 0;
+}
+.js-tree-box .jstree{
+	padding: 30px 0;
+	border: 1px solid #d7dbe2;
+	border-top-width: 0;
+	height: 300px;
+	overflow: auto;
+}
+.jstree-default .jstree-disabled {
+	opacity: 0.5;
+}
+@media (max-width: 767px){
+	.js-tree-box .btn-holder{
+		padding: 34px 0;
+	}
+	.js-tree-box .btn-simple:before{
+		transform: rotate(90deg);
+	}
+}

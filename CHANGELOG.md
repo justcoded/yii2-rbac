@@ -13,7 +13,8 @@ v1.1.1
 v1.1
 ---------------------
 * NEW: Permissions selector as a real Tree-based selector.
-* Bugfix: Fix wrong unique name validations for Role and Permission creating form
+* Bugfix: Fix wrong unique name validations for Role and Permission creating form.
+* Bugfix: Fatal error on creating Role/Permission with existed name.
 
 v1.0.2
 ---------------------
@@ -21,7 +22,7 @@ v1.0.2
 
 v1.0.1
 ---------------------
-* Disable inherit permissions in role permissions multi-select box.
+* Disable inherit permissions in role permissions selector.
 
 v1.0
 ---------------------
