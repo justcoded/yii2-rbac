@@ -20,11 +20,11 @@ class RouteAccessControl extends ActionFilter
 
 	/**
 	 * Allow route pattern
-	 * in debug mode default value is "/^(gii|debug)/i".
+	 * in debug mode default value is "/^(site|gii|debug)\//i".
 	 *
 	 * @var string
 	 */
-	public $allowRegexp = '/^(gii)/i';
+	public $allowRegexp = '/^(site)\//i';
 
 	/**
 	 * RouteAccessControl constructor.
@@ -34,7 +34,7 @@ class RouteAccessControl extends ActionFilter
 	public function __construct(array $config = [])
 	{
 		if (defined('YII_DEBUG') && YII_DEBUG) {
-			$this->allowRegexp = '/^(gii|debug)/i';
+			$this->allowRegexp = '/^(site|gii|debug)\//i';
 		}
 		parent::__construct($config);
 	}
