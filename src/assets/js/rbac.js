@@ -4,7 +4,7 @@
   })
 
   function init_role_permissions_tree() {
-    $.fn.tree({
+    $.fn.treePanels({
       dataFrom: window.allowPermissions,
       dataTo: window.denyPermissions,
       fromTreeElement:'#allowPermissions',

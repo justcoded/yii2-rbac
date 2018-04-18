@@ -6,7 +6,7 @@
 // This file will be compiled into app.js and will not be minified.
 // Feel free with using ES6 here.
 (function ($) {
-  var Tree = function Tree(options) {
+  var TreePanels = function TreePanels(options) {
     var defaultList = {
       'plugins': ['search', 'checkbox'],
       'core': {
@@ -237,12 +237,12 @@
     }(options);
   };
 
-  $.fn.tree = function (options) {
-    var settings = $.extend({}, $.fn.tree.defaults, options);
-    return Tree(settings);
+  $.fn.treePanels = function (options) {
+    var settings = $.extend({}, $.fn.treePanels.defaults, options);
+    return TreePanels(settings);
   };
 
-  $.fn.tree.defaults = {
+  $.fn.treePanels.defaults = {
     dataFrom: [],
     dataTo: [],
     fromTreeElement: '#jstree-in',
