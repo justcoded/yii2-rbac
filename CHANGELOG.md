@@ -1,6 +1,10 @@
 CHANGELOG
 =====================
 
+v1.1.3
+---------------------
+* Bugfix: Compatibility with Adminlte v2.6.0 (conflict of $.fn.tree plugin name). @ap
+
 v1.1.2
 ---------------------
 * AccessControl filter update default regexp to ^site, in debug mode add gii and debug modules.
