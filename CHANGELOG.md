@@ -1,6 +1,10 @@
 CHANGELOG
 =====================
 
+v1.2
+---------------------
+* NEW: Bootstrap4 Themes support.
+
 v1.1.3
 ---------------------
 * Bugfix: Compatibility with Adminlte v2.6.0 (conflict of $.fn.tree plugin name). @ap
