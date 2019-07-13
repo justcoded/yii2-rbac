@@ -4,6 +4,7 @@ CHANGELOG
 v1.2
 ---------------------
 * NEW: Bootstrap4 Themes support.
+* NEW: RouteAccessControl filter autoCreatePermission option in debug mode.
 
 v1.1.3
 ---------------------
