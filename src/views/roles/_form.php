@@ -5,19 +5,19 @@
 
 use justcoded\yii2\rbac\models\Role;
 use yii\helpers\Html;
-use yii\bootstrap\ActiveForm;
+use justcoded\yii2\rbac\widgets\RbacActiveForm;
 use justcoded\yii2\rbac\forms\ItemForm;
 use justcoded\yii2\rbac\assets\RbacAssetBundle;
 
 RbacAssetBundle::register($this);
 ?>
 
-<?php $form = ActiveForm::begin(); ?>
-<div id="justcoded-role-form" class="role-form panel box">
-	<div class="panel-header box-header with-border">
-		<h3 class="box-title">Role</h3>
+<?php $form = RbacActiveForm::begin(); ?>
+<div id="justcoded-role-form" class="role-form panel box card">
+	<div class="panel-header box-header card-header with-border">
+		<h3 class="box-title card-title">Role</h3>
 	</div>
-	<div class="panel-body box-body">
+	<div class="panel-body box-body card-body">
 		<?= $form->field($model, 'name')->textInput([
 			'maxlength' => true,
 			'readonly'  => $model->scenario != ItemForm::SCENARIO_CREATE
@@ -37,7 +37,7 @@ RbacAssetBundle::register($this);
 				'form'  => $form,
 		]) ?>
 	</div>
-	<div class="panel-footer box-footer text-right">
+	<div class="panel-footer box-footer card-footer text-right">
 		<?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?> &nbsp;
 		<?php if (!empty($role)) : ?>
 			<?= Html::a(
@@ -55,4 +55,4 @@ RbacAssetBundle::register($this);
 	</div>
 
 </div>
-<?php ActiveForm::end(); ?>
+<?php $form::end(); ?>

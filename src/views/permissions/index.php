@@ -3,14 +3,14 @@
 use yii\helpers\Html;
 use justcoded\yii2\rbac\models\ItemSearch;
 use justcoded\yii2\rbac\forms\RoleForm;
-use yii\grid\GridView;
+use justcoded\yii2\rbac\widgets\RbacGridView;
 
 /* @var $this yii\web\View */
 /* @var $searchModel justcoded\yii2\rbac\models\ItemSearch */
 /* @var $dataProviderPermissions yii\data\ActiveDataProvider */
 /* @var $dataProviderRoles yii\data\ActiveDataProvider */
 
-$this->title                   = 'Permissions';
+$this->title = 'Permissions';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 
@@ -22,13 +22,12 @@ $this->params['breadcrumbs'][] = $this->title;
 				<div class="panel-header box-header with-border">
 					<h3 class="box-title">Roles
 						&nbsp;
-						<?= Html::a('Add Role', ['roles/create'], ['class' => 'btn btn-xs btn-success']); ?>
+						<?= Html::a('Add Role', ['roles/create'], ['class' => 'btn btn-xs btn-sm btn-success']); ?>
 					</h3>
 				</div>
 				<div class="panel-body box-body">
-					<?= GridView::widget([
+					<?= RbacGridView::widget([
 						'dataProvider' => $dataProviderRoles,
-						'layout' => '{items}{pager}',
 						'filterModel'  => $searchModel,
 						'columns'      => [
 							['class' => 'yii\grid\SerialColumn'],
@@ -42,7 +41,7 @@ $this->params['breadcrumbs'][] = $this->title;
 								},
 							],
 							[
-								'header' => 'Permissions #',
+								'header' => 'Permissions',
 								'headerOptions' => ['class' => 'col-md-2'],
 								'contentOptions' => ['class' => 'text-center'],
 								'value'  => function ($data) {
@@ -66,23 +65,18 @@ $this->params['breadcrumbs'][] = $this->title;
 				<div class="panel-header box-header with-border">
 					<h3 class="box-title">Permissions
 						&nbsp;
-						<?= Html::a('Add Permission', ['permissions/create'], ['class' => 'btn btn-xs btn-success']); ?>
-						<?= Html::a('Scan Routes', ['permissions/scan'], ['class' => 'btn btn-xs btn-default']); ?>
+						<?= Html::a('Add Permission', ['permissions/create'], ['class' => 'btn btn-xs btn-sm btn-success']); ?>
+						<?= Html::a('Scan Routes', ['permissions/scan'], ['class' => 'btn btn-xs btn-sm btn-default']); ?>
 					</h3>
 				</div>
 				<div class="panel-body box-body">
-					<?= GridView::widget([
+					<?= RbacGridView::widget([
 						'dataProvider' => $dataProviderPermissions,
-						'layout' => '{items}
-									<div class="row">
-										<div class="col-md-6">{summary}</div>
-										<div class="col-md-6 text-right">{pager}</div>
-									</div>',
 						'filterModel'  => $searchModel,
 						'columns'      => [
 							['class' => 'yii\grid\SerialColumn'],
 							[
-								'header'    => 'Permissions',
+								'header'    => 'Permission',
 								'format'    => 'html',
 								'filter'    => Html::activeTextInput($searchModel, 'permName', ['class' => 'form-control']),
 								'value'     => function ($data) {
@@ -93,7 +87,7 @@ $this->params['breadcrumbs'][] = $this->title;
 								'attribute' => 'description',
 							],
 							[
-								'header' => 'Role',
+								'header' => 'Roles',
 								'format' => 'html',
 								'headerOptions' => ['class' => 'col-md-2'],
 								'filter'    => Html::activeDropDownList($searchModel, 'permRole', \justcoded\yii2\rbac\models\Role::getList(),
