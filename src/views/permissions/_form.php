@@ -6,22 +6,21 @@
 
 use justcoded\yii2\rbac\forms\PermissionRelForm;
 use yii\helpers\Html;
-use yii\bootstrap\ActiveForm;
-use kartik\select2\Select2;
+use justcoded\yii2\rbac\widgets\RbacActiveForm;
 use justcoded\yii2\rbac\forms\ItemForm;
 
 ?>
 
 <div class="row">
 	<div class="col-md-7">
-		<?php $form = ActiveForm::begin([
+		<?php $form = RbacActiveForm::begin([
 			'id' => 'form-permission',
 		]); ?>
-		<div class="panel box">
-			<div class="panel-header box-header with-border">
-				<h3 class="box-title">Permission Details</h3>
+		<div class="panel box card">
+			<div class="panel-header box-header with-border card-header">
+				<h3 class="box-title card-title">Permission Details</h3>
 			</div>
-			<div class="panel-body box-body">
+			<div class="panel-body box-body card-body">
 
 				<?= $form->field($model, 'name')->textInput([
 					'maxlength' => true,
@@ -33,7 +32,7 @@ use justcoded\yii2\rbac\forms\ItemForm;
 				<?= $form->field($model, 'ruleClass')->textInput() ?>
 
 			</div>
-			<div class="panel-footer box-footer text-right">
+			<div class="panel-footer box-footer card-footer text-right">
 				<?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?> &nbsp;
 				<?php if (!empty($permission)) : ?>
 					<?= Html::a(
@@ -50,7 +49,7 @@ use justcoded\yii2\rbac\forms\ItemForm;
 				<?php endif; ?>
 			</div>
 		</div>
-		<?php ActiveForm::end(); ?>
+		<?php $form::end(); ?>
 
 		<?php if (!empty($permission)) : ?>
 		<p class="text-center">

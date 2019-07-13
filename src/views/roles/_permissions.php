@@ -1,7 +1,7 @@
 <?php
 /* @var $this View */
 /* @var $model \justcoded\yii2\rbac\forms\RoleForm */
-/* @var $form \yii\bootstrap\ActiveForm */
+/* @var $form \justcoded\yii2\rbac\widgets\RbacActiveForm */
 
 use yii\helpers\Html;
 use yii\helpers\Json;

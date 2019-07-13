@@ -27,6 +27,13 @@ class RouteAccessControl extends ActionFilter
 	public $allowRegexp = '/^(site)\//i';
 
 	/**
+	 * Creates controller/action permission automatically if they are missing in debug mode
+	 *
+	 * @var bool
+	 */
+	public $autoCreatePermissions = true;
+
+	/**
 	 * RouteAccessControl constructor.
 	 *
 	 * @param array $config
@@ -67,6 +74,7 @@ class RouteAccessControl extends ActionFilter
 		) {
 			$allow = true;
 		} else {
+			$this->autoCreatePermissions($action_rule, $controller_rule);
 			$allow = Yii::$app->user->can($action_rule);
 		}
 
@@ -86,5 +94,32 @@ class RouteAccessControl extends ActionFilter
 	public function denyAccess()
 	{
 		throw new ForbiddenHttpException('You are not allowed to perform this action.');
+	}
+
+	/**
+	 * Auto Create Permissions
+	 * in debug mode create permissions automatically and assign them to master.
+	 *
+	 * @param string $action_rule
+	 * @param string $controller_rule
+	 */
+	protected function autoCreatePermissions($action_rule, $controller_rule)
+	{
+		if (! YII_DEBUG && $this->autoCreatePermissions) {
+			return;
+		}
+		
+		$auth = \Yii::$app->authManager;
+		if (! $auth->getPermission($action_rule)) {
+			$perm = $auth->createPermission($action_rule);
+			$perm->description = 'Route ' . $action_rule;
+			$auth->add($perm);
+			
+			if (! $auth->getPermission($controller_rule)) {
+				$perm = $auth->createPermission($controller_rule);
+				$perm->description = 'Route ' . $controller_rule;
+				$auth->add($perm);
+			}
+		}
 	}
 }

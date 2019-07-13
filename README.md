@@ -92,6 +92,30 @@ To use the RBAC extension, you need to configure the components array in your ap
 ],
 ```
 
+##### Bootstrap4 Themes Support
+
+By default all views use standard yii2-bootstrap package with Boostrap v3.
+If you use modern Bootstrap 4, then you can overwrite some classes to use yii2-bootstrap4
+package instead. Inside your configuration you need to reconfigure container dependencies like
+this:
+
+```php
+'container' => [
+	'definitions' => [
+		// you can create your own GrivView to customize all options for main roles and permissions lists.
+		'justcoded\yii2\rbac\widgets\RbacGridView' => [
+			'class' => \app\modules\admin\widgets\RbacGridView::class,
+		],
+		// this will replace bootstrap3 ActiveForm with bootstrap4 ActiveForm.
+		'justcoded\yii2\rbac\widgets\RbacActiveForm' => [
+			'class' => \yii\bootstrap4\ActiveForm::class,
+		],
+	],
+],
+``` 
+
+* Note: you need to add `yiisoft/yii2-bootstrap4` package dependency manually in your `composer.json`.
+
 #### Basic RBAC configuration
 
 Please follow [oficial documentation](http://www.yiiframework.com/doc-2.0/guide-security-authorization.html#configuring-rbac)

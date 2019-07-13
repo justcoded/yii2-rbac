@@ -10,12 +10,12 @@
 /* @var $selected array */
 
 use kartik\select2\Select2;
-use yii\bootstrap\ActiveForm;
-use yii\bootstrap\Html;
+use justcoded\yii2\rbac\widgets\RbacActiveForm;
+use yii\helpers\Html;
 
 ?>
 
-<?php $form = ActiveForm::begin([
+<?php $form = RbacActiveForm::begin([
 	'action' => ['add-relation', 'name' => $model->name],
 ]); ?>
 
@@ -86,4 +86,4 @@ use yii\bootstrap\Html;
 	</div>
 </div>
 
-<?php ActiveForm::end(); ?>
+<?php $form::end(); ?>

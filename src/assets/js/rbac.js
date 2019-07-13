@@ -38,6 +38,7 @@
     $('#inheritSearch').on("keyup change", function () {
       $('#inheritPermissions').jstree(true).search($('#inheritSearch').val());
     });
+    $('#allowPermissionsCntrl').addClass('d-none');
   }
 
 })(jQuery);
