@@ -19,11 +19,11 @@ use yii\helpers\Html;
 	'action' => ['add-relation', 'name' => $model->name],
 ]); ?>
 
-<div class="panel box">
-	<div class="panel-header box-header with-border">
-		<h3 class="box-title"><?= $title ?></h3>
+<div class="panel box card">
+	<div class="panel-header box-header with-border card-header">
+		<h3 class="box-title card-title"><?= $title ?></h3>
 	</div>
-	<div class="panel-body box-body">
+	<div class="panel-body box-body card-body">
 		<?php if ($selected) : ?>
 			<p><?= $introMsg ?></p>
 			<table class="table table-striped">
@@ -35,7 +35,7 @@ use yii\helpers\Html;
 						</td>
 						<td><small><?= Html::encode($item->description); ?></small></td>
 						<td>
-							<?php //we can't remove if this item is inherit from some other item ?>
+							<?php // we can't remove if this item is inherit from some other item. ?>
 							<?php if (!isset($item->data['_inherit']) || ! $item->data['_inherit']) : ?>
 								<?= Html::a(
 									'&times;',
