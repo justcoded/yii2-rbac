@@ -1,6 +1,10 @@
 CHANGELOG
 =====================
 
+v1.2.1
+---------------------
+* Bootstrap4 support bug fix on Permission update screen.
+
 v1.2
 ---------------------
 * NEW: Bootstrap4 Themes support.
